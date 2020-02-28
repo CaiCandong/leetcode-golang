@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package problem0050
 
 func myPow(x float64, n int) float64 {
 	if n < 0 {
@@ -10,19 +8,14 @@ func myPow(x float64, n int) float64 {
 	return helper(x, n)
 }
 func helper(x float64, n int) float64 {
-	if n == 1 {
-		return x
+	if n == 0 {
+		return 1
 	}
-	if n%2 == 0 {
+	if n&1 == 0 {
 		temp := helper(x, n/2)
 		return temp * temp
-	}
-	if n%2 == 1 {
+	} else {
 		temp := helper(x, n/2)
 		return temp * temp * x
 	}
-	return 0
-}
-func main() {
-	fmt.Print(myPow(2.0, -2))
 }
