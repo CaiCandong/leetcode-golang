@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package problem0172
 
 func trailingZeroes(n int) int {
 	count5 := 0
@@ -9,8 +7,4 @@ func trailingZeroes(n int) int {
 		n /= 5
 	}
 	return count5
-}
-func main() {
-	res := trailingZeroes(5)
-	fmt.Println(res)
 }
